@@ -43,5 +43,4 @@ def inputcheck():
 print(f'{pcs.indent}Welcome to{pcs.mint} ETS2MU {pcs.grey}(i know, bad name.)\n'
      +f'{pcs.indent}What would you like to do?\n{pcs.indent}ps: say "help" for help.\n') # the start text
 
-
 inputcheck()
