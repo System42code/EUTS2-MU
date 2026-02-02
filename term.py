@@ -11,7 +11,7 @@ end = False
 def inputcheck():
     inputvar = input()
     if inputvar.replace('/', '') =='help': #checks if you ask for help
-        print(f'\n{pcs.indent}EUST2-MU (or Euro Truck Simulator 2 Music Utility for long) is a utility used\n{pcs.indent}to rename files to their title made for the radio in Euro Truck Simulator 2 but also for\n{pcs.indent}whatever you want too!\n{pcs.indent}Here\'s a list of the commands and what they do.\n{pcs.indent}ps, you don\'t need to use a /')
+        print(f'\n{pcs.indent}EUTS2-MU (or Euro Truck Simulator 2 Music Utility for long) is a utility used\n{pcs.indent}to rename files to their title made for the radio in Euro Truck Simulator 2 but also for\n{pcs.indent}whatever you want too!\n{pcs.indent}Here\'s a list of the commands and what they do.\n{pcs.indent}ps, you don\'t need to use a /')
         print(f'\n{pcs.indent}/help           Opens this menu.\n{pcs.indent}/extrahelp      More technical stuff\n{pcs.indent}/quit, /exit    Exits this code.\n{pcs.indent}/runmain        The purpose of this code!\n') #and (hopefully) helps.
         inputcheck()
     if inputvar.replace('/', '') == 'extrahelp':
@@ -45,7 +45,7 @@ def inputcheck():
         print('No command triggered.')
         inputcheck()
 
-print(f'{pcs.indent}Welcome to{pcs.mint} EUST2-MU {pcs.grey}(i know, bad name.)\n'
+print(f'{pcs.indent}Welcome to{pcs.mint} EUTS2-MU {pcs.grey}(i know, bad name.)\n'
      +f'{pcs.indent}What would you like to do?\n{pcs.indent}ps: say "help" for help.\n') # the start text
 
 inputcheck()
