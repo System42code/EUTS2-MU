@@ -32,6 +32,6 @@ Artist - Title - Album - Artist if you want to.
 
 Be able to use a path with spaces.
 
-yes, if you use a path with spaces like C:/music/MY MUSIC YIPEE! it will crash.
+_yes, if you use a path with spaces like C:/music/MY MUSIC YIPEE! it will crash._
 
 It currently iterates through a folder, so make a setting to turn it off.
