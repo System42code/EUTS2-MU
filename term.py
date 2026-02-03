@@ -7,7 +7,6 @@ class pcs: # buncha colors for the script
     mint = term.mediumspringgreen #(to use once.)
     indent = term.mediumpurple('>> ')
 
-end = False
 def inputcheck():
     inputvar = input()
     if inputvar.replace('/', '') =='help': #checks if you ask for help
@@ -19,12 +18,10 @@ def inputcheck():
         inputcheck()
     elif inputvar.replace('/', '') in ('quit', 'exit'): #quiting
         print(f'{pcs.indent}Quitting...')
-        globals()['end'] = True
-        return
+        exit()
     elif inputvar.replace('/', '') in ('die.', 'die', 'kys'):
         print(f'{pcs.indent}*sigh*\n{pcs.indent}Quitting...')
-        globals()['end'] = True
-        return
+        exit()
     elif inputvar.split(' ')[0].replace('/', '') == 'runmain': # and the main bit
         values = inputvar.split(' ')
         valnum = str(values).count(',')
@@ -39,8 +36,6 @@ def inputcheck():
             elif valnum == 3:
                 renamer.main(values[1], values[2], values[3]+'\\')
     else:
-        if end == True:
-            return
         print(inputvar)
         print('No command triggered.')
         inputcheck()
