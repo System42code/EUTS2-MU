@@ -12,7 +12,7 @@ Here are some terms and what they mean.
 
 ## replacelist
 
-So, Windows has certain characters that can't be used in a file name, and if I say for it to use,throw an say, a \ it will through a error and crash the code. So, we add a list including all the characters we can't have separated by spaces (e.g., / \\ < > ) And other OSes might block different characters or you might want to use different characters, so you can use different lists!
+So, Windows has certain characters that can't be used in a file name, and if I say for it to use a \ in the title, it will throw a error and crash the code. So, we add a list including all the characters we can't have separated by spaces (e.g., / \\ < > ) And other OSes might block different characters or you might want to use different characters, so you can use different lists!
 
 ## replace
 
