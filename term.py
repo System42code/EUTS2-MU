@@ -1,4 +1,5 @@
 from blessed import Terminal
+import extrafiles
 term = Terminal()
 
 class pcs: # buncha colors for the script
@@ -11,7 +12,7 @@ def inputcheck():
     inputvar = input()
     if inputvar.replace('/', '') =='help': #checks if you ask for help
         print(f'\n{pcs.indent}EUTS2-MU (or Euro Truck Simulator 2 Music Utility for long) is a utility used\n{pcs.indent}to rename files to their title made for the radio in Euro Truck Simulator 2 but also for\n{pcs.indent}whatever you want too!\n{pcs.indent}Here\'s a list of the commands and what they do.\n{pcs.indent}ps, you don\'t need to use a /')
-        print(f'\n{pcs.indent}/help           Opens this menu.\n{pcs.indent}/extrahelp      More technical stuff\n{pcs.indent}/quit, /exit    Exits this code.\n{pcs.indent}/runmain        The purpose of this code!\n') #and (hopefully) helps.
+        print(f'\n{pcs.indent}/help           Opens this menu.\n{pcs.indent}/extrahelp      More technical stuff\n{pcs.indent}/quit, /exit    Exits this code.\n{pcs.indent}/runmain        Takes a replacelist, a optional replace, and the path to the folder containing the music seperated by commas.\n') #and (hopefully) helps.
         inputcheck()
     if inputvar.replace('/', '') == 'extrahelp':
         print(f'\n{pcs.indent}Welcome. So, here\'s a list of info.\n{pcs.indent}replacelist: So, Windows has certain characters that can\'t be used in a file name, \n{pcs.indent}and if I say for it to use say, a \\ it will through a error and crash the code.\n{pcs.indent}So, we add a list including all the characters we can\'t have seperated by spaces (eg,/ \\ < >)\n{pcs.indent}And, other OSes might block different characters\n{pcs.indent}(after all, not all OSes are Windows clones.) so, you can use different lists!\n{pcs.indent}And that\'s what a replacelist is!\n\n{pcs.indent}replace: Well, what will you replace the \\ with?\n')
@@ -22,21 +23,22 @@ def inputcheck():
     elif inputvar.replace('/', '') in ('die.', 'die', 'kys'):
         print(f'{pcs.indent}*sigh*\n{pcs.indent}Quitting...')
         exit()
-    elif inputvar.split(' ')[0].replace('/', '') == 'runmain': # and the main bit
+    elif inputvar.split(' ')[0].replace('/', '').replace(',', '') == 'runmain': # and the main bit
         values = inputvar.split(' ')
-        valnum = str(values).count(',')
+        valnum = inputvar.count(',')
         if valnum > 3 or valnum < 2:
-            print(f'{pcs.indent}Expected 2 or 3 values, got {valnum}.')
-            inputcheck()
-        else:
-            print('One sec...')
-            import renamer
+            print(f'{pcs.indent}Expected 2 or 3 values, got {valnum}.') #damn, gotta get a way to tell it, "hey, no it's actually x amount of values"
+            inputcheck() # alr fuck it. im done.
+        else: #i dont know how long but im done.
             if valnum == 2:
-                renamer.main(values[1], '', values[2]+'\\')
+                print('One sec...')
+                import renamer
+                renamer.main(values[1], '', extrafiles.quotechecker(values[2])+'\\')
             elif valnum == 3:
-                renamer.main(values[1], values[2], values[3]+'\\')
+                print('One sec...')
+                import renamer
+                renamer.main(values[1], values[2], extrafiles.quotechecker(values[3])+'\\')
     else:
-        print(inputvar)
         print('No command triggered.')
         inputcheck()
 
