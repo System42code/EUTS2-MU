@@ -23,15 +23,9 @@ Well, what will you replace the \ with?
 
 ## Features
 
-Be able to do a custom name format, so instead of having it be Title - Artist no matter what, you can change it to be like
-
-Artist - Title - Album - Artist if you want to.
+Be able to do a custom name format, so instead of having it be Title - Artist no matter what, you can change it to be like Artist - Title - Album - Artist if you want to.
 
 
 ## Bugs (not a feature)
-
-Be able to use a path with spaces.
-
-_yes, if you use a path with spaces like C:/music/MY MUSIC YIPEE! it will crash._
 
 It currently iterates through a folder, so make a setting to turn it off.

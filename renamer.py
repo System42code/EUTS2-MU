@@ -61,10 +61,10 @@ def main(list, replace, musicpath):
         filetype = item.rsplit('.')[-1] # same as gettag()
         tqdm.write(f'{filetype} file') #prints it to be nice :)
         if filetype in ('flac', 'mp3', 'ogg'): #makes sure it's a mp3 or flac
-            title = gettag('TIT2', f'{musicpath}'+item) #and gets the tags,
-            artist = gettag('TPE1', f'{musicpath}'+item) #makes sure they are good,
+            title = gettag('TIT2', f'{musicpath}/'+item) #and gets the tags,
+            artist = gettag('TPE1', f'{musicpath}/'+item) #makes sure they are good,
             newname = charremove(f'{title} - {artist}.{filetype}', list, replace)
-            os.rename(f'{musicpath}{item}', f'{musicpath}{newname}') # and renames it to Title - Artist
+            os.rename(f'{musicpath}/{item}', f'{musicpath}/{newname}') # and renames it to Title - Artist
             tqdm.write(f'Renamed {item} to {newname}')
         else:
             tqdm.write('Sorry, at the moment EUTS2-MU only supports .mp3 and .flac')
