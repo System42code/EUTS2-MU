@@ -25,7 +25,8 @@ Well, what will you replace the \ with?
 
 Be able to do a custom name format, so instead of having it be Title - Artist no matter what, you can change it to be like Artist - Title - Album - Artist if you want to.
 
+use the wiki feature in github.
 
 ## Bugs (not a feature)
 
-It currently iterates through a folder, so make a setting to turn it off.
+It currently iterates down through a folder, so make a setting to turn it off.
